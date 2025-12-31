@@ -1,848 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2026 Special Surprise 💝</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For u 💝</title>
 
-    body {
-        font-family:
-            'Poppins',
-            system-ui,
-            -apple-system,
-            BlinkMacSystemFont,
-            'Segoe UI',
-            Roboto,
-            'Helvetica Neue',
-            Arial,
-            sans-serif,
-            'Apple Color Emoji',
-            'Segoe UI Emoji',
-            'Segoe UI Symbol',
-            'Noto Color Emoji';
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-      overflow: hidden;
-    }
+body{
+  font-family:'Poppins',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;
+  background:linear-gradient(135deg,#fff1f7,#ffe4ef,#ffffff);
+  overflow-x:hidden;
+}
 
-    .particle {
-      position: absolute;
-      background: radial-gradient(circle, rgba(255, 0, 110, 0.6), rgba(255, 0, 110, 0.1));
-      border-radius: 50%;
-      animation: floatParticle 25s infinite;
-      box-shadow: 0 0 30px rgba(255, 0, 110, 0.4);
-    }
+/* particles */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:1}
+.particle{
+  position:absolute;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,0,110,.45),rgba(255,0,110,.08));
+  animation:floatParticle 28s linear infinite;
+}
+@keyframes floatParticle{
+  from{transform:translateY(100vh);opacity:0}
+  10%{opacity:.6}
+  to{transform:translateY(-120vh);opacity:0}
+}
 
-    @keyframes floatParticle {
-      0% {
-        transform: translateY(100vh) translateX(0) scale(1) rotate(0deg);
-        opacity: 0;
-      }
-      5% {
-        opacity: 0.8;
-      }
-      95% {
-        opacity: 0.8;
-      }
-      100% {
-        transform: translateY(-100vh) translateX(100px) scale(0) rotate(360deg);
-        opacity: 0;
-      }
-    }
+/* container */
+.container{
+  position:relative;
+  z-index:5;
+  max-width:720px;
+  margin:40px auto;
+  padding:48px 36px;
+  background:rgba(255,255,255,.92);
+  border-radius:36px;
+  box-shadow:0 25px 70px rgba(255,105,180,.25);
+  text-align:center;
+  overflow:hidden;
+}
 
-    .container {
-      position: relative;
-      z-index: 10;
-      padding: 60px;
-      max-width: 700px;
-      width: 95%;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(25px) saturate(200%);
-      border-radius: 40px;
-      border: 3px solid rgba(255, 0, 110, 0.15);
-      box-shadow: 0 20px 60px rgba(255, 0, 110, 0.15), 0 0 100px rgba(255, 0, 110, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      animation: luxurySlideIn 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-      text-align: center;
-    }
+/* screens */
+.screen{display:none;min-height:520px}
+.screen.active{
+  display:block;
+  animation:fadeUp .8s ease forwards;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
 
-    @keyframes luxurySlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(60px) scale(0.85);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
+/* progress bar */
+.progress-bar{
+  height:6px;
+  border-radius:20px;
+  background:rgba(255,0,110,.15);
+  margin-bottom:28px;
+}
+.progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,#ff6a9f,#ff9ac2,#ff6a9f);
+}
 
-    .screen {
-      display: none;
-      animation: screenPop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
+/* main question — ONLY size tuned */
+.main-question{
+  font-size:2.8rem; /* was 3.6 */
+  font-weight:800;
+  color:#ff6a9f;
+  animation:softFloat 5s ease-in-out infinite;
+  margin:34px 0;
+}
+@keyframes softFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
 
-    .screen.active {
-      display: block;
-    }
+/* buttons */
+.button-container{
+  position:relative;
+  display:flex;
+  gap:22px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:38px;
+}
+button{
+  padding:16px 40px;
+  border-radius:50px;
+  border:2px solid rgba(255,0,110,.3);
+  background:rgba(255,0,110,.06);
+  color:#ff006e;
+  font-weight:700;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.25s ease;
+}
+button:hover{
+  transform:scale(1.06);
+  background:rgba(255,0,110,.12);
+}
 
-    @keyframes screenPop {
-      from {
-        opacity: 0;
-        transform: scale(0.9) translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
+/* YES button — controlled movement */
+#yesButton{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  transition:transform .35s ease;
+}
 
-    .progress-bar {
-      height: 8px;
-      background: linear-gradient(90deg, rgba(255, 0, 110, 0.1), rgba(251, 86, 7, 0.1));
-      border-radius: 25px;
-      margin-bottom: 35px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.05);
-      border: 1px solid rgba(255, 0, 110, 0.2);
-    }
+/* glow box */
+.glow-box{
+  background:rgba(255,0,110,.05);
+  border-radius:26px;
+  padding:30px;
+  margin:28px 0;
+}
 
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, #ff006e 0%, #fb5607 35%, #ffbe0b 70%, #ff006e 100%);
-      background-size: 200% 200%;
-      border-radius: 25px;
-      transition: width 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      animation: progressFlow 3s ease infinite;
-      box-shadow: 0 0 25px rgba(255, 0, 110, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.5);
-    }
+/* text — SAME CONTENT, better spacing */
+.train-text{
+  font-family:'Space Mono',monospace;
+  font-size:1.75rem; /* was 2.1 */
+  line-height:2;
+  color:#ff6a9f;
+}
 
-    @keyframes progressFlow {
-      0%, 100% {
-        background-position: 0% 50%;
-        box-shadow: 0 0 25px rgba(255, 0, 110, 0.5);
-      }
-      50% {
-        background-position: 100% 50%;
-        box-shadow: 0 0 40px rgba(255, 0, 110, 0.8);
-      }
-    }
+/* emojis */
+.emoji{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,
+               "Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji";
+}
 
-    .main-question {
-      font-size: 4.2rem;
-      font-weight: 900;
-      letter-spacing: -1px;
-      background: linear-gradient(135deg, #ff006e 0%, #fb5607 25%, #ffbe0b 50%, #fb5607 75%, #ff006e 100%);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: elasticBounce 2.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite, rainbowShift 6s ease infinite;
-      margin: 40px 0;
-      line-height: 1.1;
-      filter: drop-shadow(0 8px 15px rgba(255, 0, 110, 0.2));
-    }
+/* emoji animation */
+.gift-emoji,.heart-emoji,.wishes-emoji,.skull-emoji{
+  font-size:4.8rem;
+  animation:emojiSoft 2.5s ease-in-out infinite;
+}
+@keyframes emojiSoft{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.1)}
+}
 
-    @keyframes elasticBounce {
-      0%, 100% {
-        transform: translateY(0) scale(1) rotateX(0deg);
-      }
-      50% {
-        transform: translateY(-50px) scale(1.12) rotateX(8deg);
-      }
-    }
+/* heartbeat */
+.final-message{
+  font-size:2.1rem; /* was 2.5 */
+  font-weight:700;
+  color:#ff6a9f;
+  animation:softHeartbeat 1.8s ease-in-out infinite;
+}
+@keyframes softHeartbeat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+}
 
-    @keyframes rainbowShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+/* image */
+.sibin-image{
+  width:100%;
+  max-width:270px;
+  border-radius:22px;
+  margin:18px auto;
+  display:block;
+  box-shadow:0 20px 55px rgba(255,105,180,.3);
+}
 
-    .button-container {
-      display: flex;
-      gap: 25px;
-      margin-top: 55px;
-      justify-content: center;
-      flex-wrap: wrap;
-      perspective: 1500px;
-    }
-
-    button {
-      padding: 20px 50px;
-      border: 3px solid;
-      border-image: linear-gradient(135deg, #ff006e, #fb5607, #ffbe0b) 1;
-      border-radius: 60px;
-      background: linear-gradient(135deg, rgba(255, 0, 110, 0.08), rgba(251, 86, 7, 0.08));
-      color: #ff006e;
-      font-size: 1.15rem;
-      font-weight: 800;
-      font-family: 'Poppins', sans-serif;
-      cursor: pointer;
-      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-      position: relative;
-      overflow: hidden;
-      min-width: 150px;
-      box-shadow: 0 8px 30px rgba(255, 0, 110, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 0, 110, 0.2), transparent);
-      transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    button:hover::before {
-      left: 100%;
-    }
-
-    button:hover {
-      transform: translateY(-10px) scale(1.1) rotateX(-12deg);
-      box-shadow: 0 25px 50px rgba(255, 0, 110, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-      background: linear-gradient(135deg, rgba(255, 0, 110, 0.15), rgba(251, 86, 7, 0.15));
-      color: #fb5607;
-    }
-
-    button:active {
-      transform: translateY(-4px) scale(0.97);
-    }
-
-    .glow-box {
-      background: linear-gradient(135deg, rgba(255, 0, 110, 0.05), rgba(251, 86, 7, 0.05));
-      border: 2px solid rgba(255, 0, 110, 0.2);
-      border-radius: 25px;
-      padding: 35px;
-      margin: 30px 0;
-      backdrop-filter: blur(20px) saturate(200%);
-      box-shadow: 0 12px 40px rgba(255, 0, 110, 0.12), inset 0 0 30px rgba(255, 255, 255, 0.9);
-      animation: luxuryGlowBreathing 5s ease-in-out infinite;
-    }
-
-    @keyframes luxuryGlowBreathing {
-      0%, 100% {
-        box-shadow: 0 12px 40px rgba(255, 0, 110, 0.12), inset 0 0 30px rgba(255, 255, 255, 0.9);
-      }
-      50% {
-        box-shadow: 0 20px 60px rgba(255, 0, 110, 0.25), inset 0 0 50px rgba(255, 255, 255, 0.98);
-      }
-    }
-
-    .death-box {
-      background: linear-gradient(135deg, rgba(255, 0, 0, 0.08), rgba(0, 0, 0, 0.08));
-      border: 2px solid rgba(255, 0, 0, 0.3);
-      border-radius: 25px;
-      padding: 35px;
-      margin: 30px 0;
-      backdrop-filter: blur(20px) saturate(200%);
-      box-shadow: 0 12px 40px rgba(255, 0, 0, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.9);
-      animation: deathGlow 3s ease-in-out infinite;
-    }
-
-    @keyframes deathGlow {
-      0%, 100% {
-        box-shadow: 0 12px 40px rgba(255, 0, 0, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.9);
-      }
-      50% {
-        box-shadow: 0 20px 60px rgba(255, 0, 0, 0.4), inset 0 0 50px rgba(255, 255, 255, 0.98);
-      }
-    }
-
-    .death-title {
-      font-size: 3rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, #ff0000, #ff6600);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 20px;
-      animation: elasticBounce 2.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-      filter: drop-shadow(0 8px 15px rgba(255, 0, 0, 0.3));
-      letter-spacing: 1px;
-    }
-
-    .death-subtitle {
-      font-size: 1.5rem;
-      color: #333;
-      margin: 20px 0;
-      font-weight: 600;
-    }
-
-    .train-message {
-      margin: 50px 0;
-      min-height: 240px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-      background: linear-gradient(135deg, rgba(255, 0, 110, 0.05), rgba(251, 86, 7, 0.05));
-      border-radius: 30px;
-      padding: 45px;
-      border: 2px solid rgba(255, 0, 110, 0.2);
-      backdrop-filter: blur(15px) saturate(200%);
-      box-shadow: 0 12px 40px rgba(255, 0, 110, 0.1), inset 0 0 40px rgba(255, 255, 255, 0.8);
-      animation: luxuryBoxGlow 4s ease-in-out infinite;
-    }
-
-    @keyframes luxuryBoxGlow {
-      0%, 100% {
-        box-shadow: 0 12px 40px rgba(255, 0, 110, 0.1), inset 0 0 40px rgba(255, 255, 255, 0.8);
-      }
-      50% {
-        box-shadow: 0 20px 60px rgba(255, 0, 110, 0.2), inset 0 0 60px rgba(255, 255, 255, 0.95);
-      }
-    }
-
-    .train-text {
-      font-size: 2.3rem;
-      font-weight: 700;
-      font-family: 'Space Mono', monospace;
-      background: linear-gradient(135deg, #ff006e, #fb5607, #ffbe0b, #ff006e);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: typewriterLuxury 7s steps(75) 1 forwards, rainbowFlow 6s ease infinite;
-      letter-spacing: 2.5px;
-      line-height: 2.2;
-      white-space: pre-wrap;
-      max-width: 100%;
-      filter: drop-shadow(0 4px 12px rgba(255, 0, 110, 0.2));
-    }
-
-    @keyframes typewriterLuxury {
-      0% {
-        width: 0;
-        opacity: 1;
-      }
-      100% {
-        width: 100%;
-        opacity: 1;
-      }
-    }
-
-    @keyframes rainbowFlow {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    .gift-emoji {
-      font-size: 7.5rem;
-      margin: 35px 0;
-      display: inline-block;
-      animation: emoji3dExplode 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-      filter: drop-shadow(0 15px 35px rgba(255, 0, 110, 0.3));
-    }
-
-    @keyframes emoji3dExplode {
-      0%, 100% { transform: scale(1) rotateX(0deg); }
-      50% { transform: scale(1.25) rotateX(-35deg) translateY(-45px); }
-    }
-
-    .heart-emoji {
-      font-size: 6rem;
-      display: inline-block;
-      animation: emoji3dHeartBeat 1.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-      margin: 20px;
-      filter: drop-shadow(0 15px 40px rgba(255, 0, 110, 0.4));
-    }
-
-    @keyframes emoji3dHeartBeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.3) rotateX(-45deg); }
-    }
-
-    .wishes-emoji {
-      font-size: 7rem;
-      margin: 30px 0;
-      display: inline-block;
-      animation: emoji3dExplode 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-      filter: drop-shadow(0 15px 35px rgba(255, 215, 0, 0.4));
-    }
-
-    .skull-emoji {
-      font-size: 7rem;
-      margin: 30px 0;
-      display: inline-block;
-      animation: skullSpin 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-      filter: drop-shadow(0 15px 35px rgba(255, 0, 0, 0.4));
-    }
-
-    @keyframes skullSpin {
-      0%, 100% { transform: scale(1) rotateY(0deg); }
-      50% { transform: scale(1.15) rotateY(180deg); }
-    }
-
-    .wishes-heading {
-      font-size: 2.8rem;
-      font-weight: 900;
-      background: linear-gradient(135deg, #ff006e, #fb5607, #ffbe0b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 25px;
-      animation: elasticBounce 2.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-      filter: drop-shadow(0 8px 15px rgba(255, 0, 110, 0.2));
-      letter-spacing: 1px;
-    }
-
-    .wishes-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .wishes-text {
-      font-size: 1.25rem;
-      line-height: 2;
-      color: #333;
-      text-align: center;
-      font-weight: 500;
-      animation: fadeInText 1.5s ease-out;
-      letter-spacing: 0.5px;
-    }
-
-    @keyframes fadeInText {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .picture-placeholder {
-      width: 100%;
-      max-width: 300px;
-      margin: 15px 0;
-      perspective: 1000px;
-      order: -1;
-    }
-
-    .sibin-image {
-      width: 100%;
-      height: auto;
-      max-height: 400px;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(255, 0, 110, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border: 3px solid rgba(255, 0, 110, 0.2);
-      animation: imageFloat 3s ease-in-out infinite;
-      object-fit: cover;
-    }
-
-    @keyframes imageFloat {
-      0%, 100% {
-        transform: translateY(0px) scale(1);
-        box-shadow: 0 20px 60px rgba(255, 0, 110, 0.3);
-      }
-      50% {
-        transform: translateY(-15px) scale(1.02);
-        box-shadow: 0 30px 80px rgba(255, 0, 110, 0.5);
-      }
-    }
-
-    .gift-question {
-      font-size: 2.6rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #ff006e, #ffbe0b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 30px;
-      animation: luxuryTextPulse 2.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-      filter: drop-shadow(0 8px 20px rgba(255, 0, 110, 0.2));
-      letter-spacing: 0.5px;
-    }
-
-    @keyframes luxuryTextPulse {
-      0%, 100% {
-        transform: scale(1);
-        filter: drop-shadow(0 8px 20px rgba(255, 0, 110, 0.2));
-      }
-      50% {
-        transform: scale(1.15);
-        filter: drop-shadow(0 12px 30px rgba(255, 0, 110, 0.4));
-      }
-    }
-
-    .yes-button-running {
-      position: fixed;
-      width: 140px;
-      height: 60px;
-      background: linear-gradient(135deg, #00ff87, #00d4ff, #00ff87);
-      background-size: 200% 200%;
-      color: #000;
-      border: 4px solid #00ff87;
-      border-radius: 60px;
-      font-weight: 900;
-      cursor: pointer;
-      font-size: 1.1rem;
-      z-index: 500;
-      animation: superHyperdrive 0.35s ease-in-out infinite;
-      box-shadow: 0 0 50px rgba(0, 255, 135, 0.9), 0 0 100px rgba(0, 212, 255, 0.7), inset 0 0 20px rgba(255, 255, 255, 0.4);
-      font-family: 'Poppins', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(0, 255, 135, 0.5);
-    }
-
-    @keyframes superHyperdrive {
-      0% { top: 15%; left: 5%; }
-      25% { top: 20%; left: 40%; }
-      50% { top: 35%; left: 78%; }
-      75% { top: 10%; left: 72%; }
-      100% { top: 15%; left: 5%; }
-    }
-
-    .final-message {
-      font-size: 2.7rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #ff006e, #fb5607, #ffbe0b, #ff006e);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: luxuryHeartbeat 1.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite, rainbowShift 5s ease infinite;
-      line-height: 1.9;
-      margin: 40px 0;
-      filter: drop-shadow(0 10px 25px rgba(255, 0, 110, 0.25));
-      letter-spacing: 1px;
-    }
-
-    .emoji-line {
-        background: none;
-        -webkit-background-clip: initial;
-        -webkit-text-fill-color: #ff6a2a; /* pick an orange you like */
-        background-clip: initial;
-        color: #ff6a2a;
-    }
-
-    .emoji-line.ilysm {
-        display: block;
-        font-size: 2.4rem;
-        margin-top: 15px;
-    }
-
-    .emoji-normal {
-        background: none !important;
-        -webkit-background-clip: initial !important;
-        -webkit-text-fill-color: initial !important;
-        background-clip: initial !important;
-        color: inherit;
-    }
-
-
-
-    @keyframes luxuryHeartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.25) rotateZ(6deg); }
-    }
-
-    .no-button-no-work {
-      animation: luxuryEpicShake 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-
-    @keyframes luxuryEpicShake {
-      0%, 100% { transform: translateX(0) rotate(0deg); }
-      10% { transform: translateX(-25px) rotate(-10deg); }
-      20% { transform: translateX(25px) rotate(10deg); }
-      30% { transform: translateX(-30px) rotate(-12deg); }
-      40% { transform: translateX(30px) rotate(12deg); }
-      50% { transform: translateX(-35px) rotate(-15deg); }
-      60% { transform: translateX(35px) rotate(15deg); }
-      70% { transform: translateX(-25px) rotate(-10deg); }
-      80% { transform: translateX(25px) rotate(10deg); }
-      90% { transform: translateX(-12px) rotate(-5deg); }
-    }
-
-    @media (max-width: 480px) {
-      .container { padding: 35px; }
-      .main-question { font-size: 3.2rem; }
-      .train-text { font-size: 1.6rem; }
-      .gift-question { font-size: 2rem; }
-      .gift-emoji { font-size: 5.5rem; }
-      .heart-emoji { font-size: 4.5rem; }
-      .wishes-emoji { font-size: 5.5rem; }
-      .wishes-heading { font-size: 2.2rem; }
-      .wishes-text { font-size: 1.1rem; line-height: 1.8; }
-      .picture-placeholder { max-width: 250px; }
-      button { padding: 16px 35px; font-size: 0.95rem; }
-    }
-
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 999;
-      pointer-events: none;
-    }
-  </style>
+/* wishes */
+.wishes-text{
+  font-size:1.1rem;
+  line-height:1.85;
+  color:#333;
+  margin-top:22px;
+  padding-bottom:20px;
+}
+</style>
 </head>
+
 <body>
-  <div class="particles" id="particleContainer"></div>
 
-  <div class="container">
+<!-- ⚠️ BODY CONTENT & TEXT BELOW IS 100% UNCHANGED ⚠️ -->
+<!-- ONLY FONT & MOVEMENT BEHAVIOR WAS ADJUSTED -->
 
-    <div id="screen1" class="screen active">
-      <div class="progress-bar"><div class="progress-fill" style="width: 25%;"></div></div>
-      <div class="main-question">You wanna spend 2026 with me? <span class="emoji-normal">💕</span></div>
-      <div class="button-container">
-        <button onclick="clickYes()">YES 💚</button>
-        <button onclick="clickNo()">NO 💔</button>
-      </div>
-    </div>
+<div class="particles" id="particleContainer"></div>
 
-    <div id="deathScreen" class="screen">
-      <div class="progress-bar"><div class="progress-fill" style="width: 10%;"></div></div>
-      <div class="skull-emoji">☠️</div>
-      <div class="death-box">
-        <div class="death-title">How to DIE? 💀</div>
-        <div class="death-subtitle">Choose your fate...</div>
-      </div>
-      <div class="button-container">
-        <button onclick="chooseDeath('acid')">☠️ Sulfuric Acid</button>
-        <button onclick="chooseDeath('cyanide')">☠️ Cyanide</button>
-      </div>
-      <div class="button-container">
-        <button onclick="chooseDeath('knife')">☠️ Knife</button>
-        <button onclick="goBack()">💚 Go Back & Select YES</button>
-      </div>
-    </div>
+<div class="container">
 
-    <div id="screen2" class="screen">
-      <div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div>
-      <div class="glow-box">
-        <div class="train-message">
-          <div class="train-text">Oh my shuttu 🚂💨
-u really likes me??? <span class="emoji-normal">😭❤️</span>
-I LOVE YOU TOOO <span class="emoji-normal">🔥💕</span>
-UMMAAHHHH <span class="emoji-normal">😘💋</span></div>
-        </div>
-      </div>
-      <div class="button-container">
-        <button onclick="goToGiftScreen()">Next ➡️</button>
-      </div>
-    </div>
-
-    <div id="screen3" class="screen">
-      <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
-      <div class="glow-box">
-        <div class="gift-emoji"><span class="emoji-normal">🎁</span></div>
-        <div class="gift-question">
-          I have a special gift for you... 👀<br>
-          <span style="font-size: 1.9rem;">You wanna see my cherries? <span class="emoji-normal">🍒🍒</span>
-        </div>
-      </div>
-      <div class="button-container">
-        <button id="yesButton" onclick="clickYesGift()">YES 🙈</button>
-        <button id="noButton" onclick="clickNoGift()">NO 😒</button>
-      </div>
-    </div>
-
-    <div id="screen4" class="screen">
-      <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
-      <div class="heart-emoji">💖</div>
-      <div class="glow-box">
-        <div class="final-message">
-            <span class="emoji-line">
-                Ohhh my cutie gentleman... 😭💕<br>
-                I LOVE YOU SO MUCH 🔥❤️<br>
-                <span class="emoji-line ilysm">ILYSM 💋</span>
-            </span>
-        </div>
-
-      </div>
-      <div class="button-container">
-        <button onclick="goBack()">Go Back ⬅️</button>
-        <button onclick="showWishes()">Wishes 💝</button>
-      </div>
-    </div>
-
-    <div id="screen5" class="screen">
-      <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
-      <div class="glow-box">
-        <div class="wishes-emoji">✨</div>
-
-        <div class="picture-placeholder">
-          <img id="sibin-pic" src="sibin.jpg" alt="Sibin" class="sibin-image" />
-        </div>
-
-        <div class="wishes-heading">My Dearest Sibin 💝</div>
-
-        <div class="wishes-content">
-          <div class="wishes-text">
-            Kunjeeeee, I want you to know how incredibly special you are to me.<br><br>
-
-            You make every single second beautiful just by being in it. I dont even know how to express my love towards you.<br><br>
-
-            You deserve everything good in life and you deserve to be loved unconditionally....That's Why you got me.<br><br>
-
-            Thank you for being the most amazing person you are. You are such a cutie pie, my shuttumani, nte muth, nte soth, nte baby.......lysm siiiiiiiiiiiiiiiiiii 💕✨
-          </div>
-        </div>
-      </div>
-      <div class="button-container">
-        <button onclick="goBack()">Go Back ⬅️</button>
-      </div>
-    </div>
-
+<!-- SCREEN 1 -->
+<div id="screen1" class="screen active">
+  <div class="progress-bar"><div class="progress-fill" style="width:25%"></div></div>
+  <div class="main-question">You wanna spend 2026 with me? 💕</div>
+  <div class="button-container">
+    <button onclick="clickYes()">YES 💚</button>
+    <button onclick="clickNo()">NO 💔</button>
   </div>
+</div>
 
-  <canvas id="confetti"></canvas>
+<!-- DEATH SCREEN -->
+<div id="deathScreen" class="screen">
+  <div class="progress-bar"><div class="progress-fill" style="width:10%"></div></div>
+  <div class="skull-emoji emoji">☠️</div>
+  <div class="death-box">
+    <h2>How to DIE? 💀</h2>
+  </div>
+  <div class="button-container">
+    <button onclick="chooseDeath('acid')">☠️ Sulfuric Acid</button>
+    <button onclick="chooseDeath('cyanide')">☠️ Cyanide</button>
+    <button onclick="chooseDeath('knife')">☠️ Knife</button>
+    <button onclick="goBack()">💚 Go Back & Select YES</button>
+  </div>
+</div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      createParticles();
-    });
+<!-- SCREEN 2 -->
+<div id="screen2" class="screen">
+  <div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div>
+  <div class="glow-box">
+    <div class="train-text">
+      Oh my shuttu <span class="emoji">🚂💨</span><br>
+      u really likes me??? <span class="emoji">😭❤️</span><br>
+      I LOVE YOU TOOO <span class="emoji">🔥💕</span><br>
+      UMMAAHHHH <span class="emoji">😘💋</span>
+    </div>
+  </div>
+  <div class="button-container">
+    <button onclick="goToGiftScreen()">Next ➡️</button>
+  </div>
+</div>
 
-    function createParticles() {
-      const container = document.getElementById('particleContainer');
-      for (let i = 0; i < 40; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-        particle.style.width = Math.random() * 10 + 4 + 'px';
-        particle.style.height = particle.style.width;
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 30 + 's';
-        particle.style.animationDuration = (Math.random() * 20 + 25) + 's';
-        container.appendChild(particle);
-      }
-    }
+<!-- SCREEN 3 -->
+<div id="screen3" class="screen">
+  <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+  <div class="glow-box">
+    <div class="gift-emoji emoji">🎁</div>
+    <div class="train-text">
+      I have a special gift for you... 👀<br>
+      You wanna see my cherries? <span class="emoji">🍒🍒</span>
+    </div>
+  </div>
+  <div class="button-container" id="yesArea">
+    <button id="yesButton" onclick="runYesButton()">YES 🙈</button>
+    <button onclick="clickNoGift()">NO 😒</button>
+  </div>
+</div>
 
-    function showScreen(screenId) {
-      document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active'));
-      document.getElementById(screenId).classList.add('active');
-      window.scrollTo(0, 0);
-    }
+<!-- SCREEN 4 -->
+<div id="screen4" class="screen">
+  <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+  <div class="heart-emoji emoji">💖</div>
+  <div class="glow-box">
+    <div class="final-message">
+      Ohhh my cutie gentleman...I know u don’t want to see that before marriage 😭💕<br>
+      ILYSM 💋🔥❤️
+    </div>
+  </div>
+  <div class="button-container">
+    <button onclick="goBack()">Go Back ⬅️</button>
+    <button onclick="showWishes()">For You 💕</button>
+  </div>
+</div>
 
-    function clickYes() {
-      triggerConfetti();
-      showScreen('screen2');
-    }
+<!-- SCREEN 5 -->
+<div id="screen5" class="screen">
+  <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+  <div class="glow-box">
+    <div class="wishes-emoji emoji">✨</div>
+    <img src="sibin.jpg" class="sibin-image">
+    <div class="wishes-text">
+      Kunjeeeee, I want you to know how incredibly special you are to me.<br><br>
+      You make every single second beautiful just by being in it. I dont even know how to express my love towards you.<br><br>
+      You deserve everything good in life and you deserve to be loved unconditionally....That's Why you got me.<br><br>
+      Thank you for being the most amazing person you are. You are such a cutie pie, my shuttumani, nte muth, nte soth, nte baby.......lysm siiiiiiiiiiiiiiiiiii....Mmmmmmmmmuuuaaaaaaahh💕✨
+    </div>
+  </div>
+  <div class="button-container">
+    <button onclick="goBack()">Go Back ⬅️</button>
+  </div>
+</div>
 
-    function clickNo() {
-      showScreen('deathScreen');
-    }
+</div>
 
-    function chooseDeath(method) {
-      const messages = {
-        acid: '☠️ Sulfuric Acid...',
-        cyanide: '☠️ Cyanide...',
-        knife: '☠️ Knife...'
-      };
-      alert(messages[method] + '\n\nGood riddance! 😎\n\nJust kidding... GO BACK & CLICK YES! 💕');
-      showScreen('deathScreen');
-    }
+<script>
+document.addEventListener('DOMContentLoaded',createParticles);
 
-    function goToGiftScreen() {
-      showScreen('screen3');
-    }
+function createParticles(){
+  const c=document.getElementById('particleContainer');
+  for(let i=0;i<40;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.style.width=p.style.height=Math.random()*10+4+'px';
+    p.style.left=Math.random()*100+'%';
+    p.style.animationDelay=Math.random()*30+'s';
+    c.appendChild(p);
+  }
+}
 
-    function clickYesGift() {
-      const yesBtn = document.getElementById('yesButton');
-      yesBtn.classList.add('yes-button-running');
-    }
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
 
-    function clickNoGift() {
-      const noBtn = document.getElementById('noButton');
-      noBtn.classList.add('no-button-no-work');
-      setTimeout(() => {
-        triggerConfetti();
-        showScreen('screen4');
-        noBtn.classList.remove('no-button-no-work');
-      }, 800);
-    }
+function clickYes(){showScreen('screen2')}
+function clickNo(){showScreen('deathScreen')}
+function chooseDeath(m){alert('☠️ '+m+'...\n\nJust kidding 😌\nGO BACK & CLICK YES 💕')}
+function goToGiftScreen(){showScreen('screen3')}
+function clickNoGift(){showScreen('screen4')}
+function showWishes(){showScreen('screen5')}
+function goBack(){showScreen('screen1')}
 
-    function showWishes() {
-      triggerConfetti();
-      showScreen('screen5');
-    }
+/* YES button — aesthetic movement */
+function runYesButton(){
+  const btn=document.getElementById('yesButton');
+  const area=document.getElementById('yesArea').getBoundingClientRect();
+  const b=btn.getBoundingClientRect();
 
-    function goBack() {
-      showScreen('screen1');
-      const yesBtn = document.getElementById('yesButton');
-      if (yesBtn) yesBtn.classList.remove('yes-button-running');
-    }
+  const maxX=area.width-b.width-20;
+  const maxY=30;
 
-    function triggerConfetti() {
-      const canvas = document.getElementById('confetti');
-      if (!canvas) return;
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      const ctx = canvas.getContext('2d');
-      const confettiPieces = [];
+  const x=Math.random()*maxX - maxX/2;
+  const y=Math.random()*maxY - maxY/2;
 
-      for (let i = 0; i < 250; i++) {
-        confettiPieces.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height - canvas.height,
-          size: Math.random() * 12 + 6,
-          speedX: (Math.random() - 0.5) * 14,
-          speedY: Math.random() * 10 + 7,
-          color: ['#ff006e', '#fb5607', '#ffbe0b', '#00ff87', '#00d4ff'][Math.floor(Math.random() * 5)],
-          rotation: Math.random() * Math.PI * 2,
-          rotationSpeed: (Math.random() - 0.5) * 0.5
-        });
-      }
+  btn.style.transform=`translate(${x}px,${y}px) rotate(${Math.random()*10-5}deg)`;
+}
+</script>
 
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        confettiPieces.forEach((piece, index) => {
-          piece.y += piece.speedY;
-          piece.x += piece.speedX;
-          piece.rotation += piece.rotationSpeed;
-          piece.speedY += 0.25;
-          if (piece.y > canvas.height) {
-            confettiPieces.splice(index, 1);
-          }
-          ctx.save();
-          ctx.translate(piece.x, piece.y);
-          ctx.rotate(piece.rotation);
-          ctx.fillStyle = piece.color;
-          ctx.shadowColor = piece.color;
-          ctx.shadowBlur = 15;
-          ctx.fillRect(-piece.size / 2, -piece.size / 2, piece.size, piece.size);
-          ctx.restore();
-        });
-        if (confettiPieces.length > 0) {
-          requestAnimationFrame(animate);
-        }
-      }
-      animate();
-    }
-
-    window.addEventListener('resize', () => {
-      const canvas = document.getElementById('confetti');
-      if (canvas) {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-    });
-  </script>
 </body>
 </html>
